@@ -1,11 +1,13 @@
 from flask import Flask, request
+from flask import Flask, session, redirect, url_for, request
+from flask_session import Session
 import os
 import time
 import mysql.connector
 import redis
 
 
-if 'MYSQL_PASSWORD' and 'MYSQL_USER' and 'MYSQL_PASSWORD' and 'REDIS_HOST' and 'DB_NAME' in os.environ:
+if 'MYSQL_PASSWORD' and 'MYSQL_USER' and 'MYSQL_PASSWORD' and 'REDIS_HOST' and 'DB_NAME' and 'REDIS_HOST' in os.environ:
     print('Required environment variables set')
 else:
     print('Required environment variables are not set!!\n Check if DB related variables are set')
@@ -15,9 +17,10 @@ mysql_password = os.environ.get("MYSQL_PASSWORD")
 mysql_user = os.environ.get("MYSQL_USER")
 mysql_hostname = os.environ.get("MYSQL_HOST")
 db_name = os.environ.get("DB_NAME")
+redis_host = os.environ.get("REDIS_HOST")
 
 def dbseed():
-     print('create database and tables')
+     print('created database and tables')
      mydb = mysql.connector.connect(
      host=str(mysql_hostname),
      user=str(mysql_user),
@@ -35,23 +38,40 @@ def dbseed():
 dbseed()
 
 app = Flask(__name__)
-cache = redis.Redis(host=os.environ.get("REDIS_HOST"), port=6379)
 
-def get_hit_count():
-    retries = 5
-    while True:
-        try:
-            return cache.incr('hits')
-        except redis.exceptions.ConnectionError as exc:
-            if retries == 0:
-                raise exc
-            retries -= 1
-            time.sleep(0.5)
+# Configure session to use Redis
+app.config['SESSION_TYPE'] = 'redis'
+app.config['SESSION_PERMANENT'] = False
+app.config['SESSION_KEY_PREFIX'] = 'flask_session:'
+app.config['SESSION_REDIS'] = redis.StrictRedis(host=str(redis_host), port=6379, db=0)
+
+# Initialize the session
+Session(app)
 
 @app.route('/')
-def hello():
-    count = get_hit_count()
-    return 'Hello World! I have been seen {} times.\n'.format(count)
+def index():
+    if 'username' in session:
+        username = session['username']
+        return f'Logged in as {username}'
+    return 'You are not logged in'
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        session['username'] = request.form['username']
+        return redirect(url_for('index'))
+    return '''
+        <form method="post">
+            <p><input type=text name=username>
+            <p><input type=submit value=Login>
+        </form>
+    '''
+
+@app.route('/logout')
+def logout():
+    session.pop('username', None)
+    return redirect(url_for('index'))
+
 
 @app.route('/player', methods=['POST'])
 def createplayerFromUrl():
