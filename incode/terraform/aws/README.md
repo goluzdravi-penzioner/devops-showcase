@@ -23,6 +23,7 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_cidr_private_subnets"></a> [cidr\_private\_subnets](#input\_cidr\_private\_subnets) | n/a | `string` | `"10.0.16.0/20"` | no |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | n/a | `string` | `"devopsbg"` | no |
 | <a name="input_k8s_version"></a> [k8s\_version](#input\_k8s\_version) | n/a | `string` | `"1.30"` | no |
 | <a name="input_rds_db_name"></a> [rds\_db\_name](#input\_rds\_db\_name) | n/a | `string` | n/a | yes |
