@@ -2,6 +2,14 @@ variable "region" {
   default = "eu-west-1"
 }
 
+variable "subnet_numbers" {
+  type = map(any)
+}
+
+variable "cidr_block" {}
+variable "cidr_public_subnets" {}
+variable "cidr_private_subnets" {}
+
 variable "cluster_name" {
   default = "devopsbg"
 }

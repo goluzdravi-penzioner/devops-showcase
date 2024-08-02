@@ -36,12 +36,12 @@ resource "aws_iam_role_policy_attachment" "AmazonEKSClusterPolicy" {
 }
 
 locals {
-  subnet_ids = var.existing_vpc == true ? var.existing_public_subnets : var.public_subnets
+  subnet_ids = var.public_subnets
 }
 
 resource "aws_iam_openid_connect_provider" "oidc" {
   client_id_list  = ["sts.amazonaws.com"]
-  thumbprint_list = ["9e99a48a9960b14926bb7f3b02e22da2b0ab7280"]
+  thumbprint_list = ["cf23df2207d99a74fbe169e3eba035e633b65d94"]
   url             = aws_eks_cluster.devops-bg.identity.0.oidc.0.issuer
 }
 
