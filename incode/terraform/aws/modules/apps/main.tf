@@ -1,16 +1,3 @@
-resource "kubernetes_secret" "db_password" {
-  metadata {
-    name = "db_password"
-  }
-
-  data = {
-    username = var.db_username
-    password = var.db_password
-  }
-
-  type = "kubernetes.io/basic-auth"
-}
-
 resource "helm_release" "nginx" {
   depends_on = [ kubernetes_secret.db_password ]
 
@@ -21,7 +8,18 @@ resource "helm_release" "nginx" {
   create_namespace = true
 
   set {
-    name  = "service.type"
-    value = "LoadBalancer"
+    name  = "db_password"
+    value = var.db_password
   }
+
+  set {
+    name  = "db_host"
+    value = var.db_host
+  }
+
+  set {
+    name  = "redis_host"
+    value = var.redis_host
+  }
+
 }
