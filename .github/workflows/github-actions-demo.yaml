@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'incode/app/**'  # Trigger only when changes are made in the app/ directory    
 
 jobs:
   build-and-push:
