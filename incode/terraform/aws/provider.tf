@@ -4,7 +4,7 @@ provider "aws" {
 
 terraform {
   backend "s3" {
-    bucket = "terraform-state-devopbg"
+    bucket = "terraform-state-devopsbg"
     key    = "terraform-state"
     region = "eu-west-1"
     #dynamodb_table = "terraform-state-lock-dynamo"
@@ -17,12 +17,12 @@ terraform {
 #   hash_key = "LockID"
 #   read_capacity = 20
 #   write_capacity = 20
- 
+
 #   attribute {
 #     name = "LockID"
 #     type = "S"
 #   }
- 
+
 #   tags {
 #     Name = "DynamoDB Terraform State Lock Table"
 #   }

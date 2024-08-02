@@ -1,17 +1,17 @@
 
 output "vpc_id" {
   description = "VPC id"
-  value = module.vpc.vpc_id
+  value       = module.vpc.vpc_id
 }
 
 output "public_subnets" {
   description = "List of public subnet ids"
-  value = module.vpc.public_subnets
+  value       = module.vpc.public_subnets
 }
 
 output "private_subnets" {
   description = "List of private subnet ids"
-  value = module.vpc.private_subnets
+  value       = module.vpc.private_subnets
 }
 
 output "eks_api_endpoint" {
