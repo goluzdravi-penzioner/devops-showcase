@@ -10,3 +10,4 @@ output "public_subnets" {
 output "private_subnets" {
   value = [for s in aws_subnet.private_subnets:s.id]  
 }
+
