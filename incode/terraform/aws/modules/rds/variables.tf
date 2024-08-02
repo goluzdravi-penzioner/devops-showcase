@@ -21,3 +21,7 @@ variable "rds_db_username" {
 variable "cidr_private_subnets" {
   default = "10.0.16.0/20"
 }
+
+variable "private_subnet_ids" {
+  type = list
+}
