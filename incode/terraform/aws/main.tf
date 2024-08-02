@@ -23,4 +23,5 @@ module "rds" {
   rds_db_name = var.rds_db_name
   rds_engine_version = var.rds_engine_version
   rds_instance_class = var.rds_instance_class
+  cidr_private_subnets = var.cidr_private_subnets
 }

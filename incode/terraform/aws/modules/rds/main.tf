@@ -8,6 +8,7 @@ resource "aws_db_instance" "database" {
   password             = random_password.db_password.result
   parameter_group_name = "default.mysql8.0"
   skip_final_snapshot  = true
+  vpc_security_group_ids = [ aws_security_group.id ]
 }
 
 resource "aws_db_subnet_group" "default" {
