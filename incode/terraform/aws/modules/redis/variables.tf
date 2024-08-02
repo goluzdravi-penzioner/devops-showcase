@@ -1,20 +1,16 @@
-variable "rds_storage" {
+variable "redis_cluster_name" {
+  type = string
+}
+
+variable "redis_node_type" {
+  type = string
+}
+
+variable "redis_nodes" {
   type = number
 }
 
-variable "rds_db_name" {
-  type = string
-}
-
-variable "rds_engine_version" {
-  type = string
-}
-
-variable "rds_instance_class" {
-  type = string
-}
-
-variable "rds_db_username" {
+variable "redis_engine_version" {
   type = string
 }
 
