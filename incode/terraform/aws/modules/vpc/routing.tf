@@ -26,7 +26,7 @@ resource "aws_eip" "nat-gw" {
     Name = "EIP-NATGW-${each.key}"
   
   }
-  vpc      = true
+  #vpc      = true
 }
 
 resource "aws_route_table" "public_subnets" {
