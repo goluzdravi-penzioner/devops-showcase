@@ -10,6 +10,15 @@ resource "aws_db_instance" "database" {
   skip_final_snapshot  = true
 }
 
+resource "aws_db_subnet_group" "default" {
+  name       = "main"
+  subnet_ids = [ module.vpc.private_subnets ]
+
+  tags = {
+    Name = "My DB subnet group"
+  }
+}
+
 resource "random_password" "db_password" {
   length           = 16
   special          = true

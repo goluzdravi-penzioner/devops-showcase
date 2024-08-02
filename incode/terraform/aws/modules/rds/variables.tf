@@ -14,22 +14,7 @@ variable "rds_instance_class" {
   type = string
 }
 
-variable "rds_db_name" {
+variable "rds_db_username" {
   type = string
 }
 
-variable "rds_db_name" {
-  type = string
-}
-
-variable "rds_db_name" {
-  type = string
-}
-
-variable "rds_db_name" {
-  type = string
-}
-
-variable "rds_db_name" {
-  type = string
-}

@@ -15,3 +15,12 @@ module "eks" {
   cluster_name             = var.cluster_name
   region                   = var.region
 }
+
+module "rds" {
+  source = "./modules/rds"
+  rds_db_username =   var.rds_db_username
+  rds_storage = var.rds_storage
+  rds_db_name = var.rds_db_name
+  rds_engine_version = var.rds_engine_version
+  rds_instance_class = var.rds_instance_class
+}
