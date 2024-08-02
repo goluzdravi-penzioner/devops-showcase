@@ -29,12 +29,15 @@ jobs:
       
       - name: Initialize Terraform
         run: terraform init
+        working-directory: incode/terraform/aws
 
       - name: Validate Terraform
         run: terraform validate
+        working-directory: incode/terraform/aws
 
       - name: Plan Terraform deployment
         run: terraform plan
+        working-directory: incode/terraform/aws
         
       # - name: Apply Terraform deployment
       #   run: terraform apply -auto-approve        
