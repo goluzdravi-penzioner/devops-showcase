@@ -1,5 +1,4 @@
-name: Build and Push Docker Image to AWS ECR
-
+name: Terraform pipeline
 on:
   push:
     branches:
@@ -36,7 +35,7 @@ jobs:
         working-directory: incode/terraform/aws
 
       - name: Plan Terraform deployment
-        run: terraform plan
+        run: terraform plan --var-file env/terraform.tfvars
         working-directory: incode/terraform/aws
         
       # - name: Apply Terraform deployment
