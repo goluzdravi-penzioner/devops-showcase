@@ -17,3 +17,4 @@ variable "db_host" {
 variable "redis_host" {
   type = string
 }
+
