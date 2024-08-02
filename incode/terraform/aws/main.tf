@@ -4,13 +4,13 @@ module "vpc" {
 }
 
 module "eks" {
-  source                   = "./modules/eks"
-  k8s_version              = var.k8s_version
-  vpc_id                   = module.vpc.vpc_id
-  public_subnets           = module.vpc.public_subnets
-  private_subnets          = module.vpc.private_subnets
-  cluster_name             = var.cluster_name
-  region                   = var.region
+  source          = "./modules/eks"
+  k8s_version     = var.k8s_version
+  vpc_id          = module.vpc.vpc_id
+  public_subnets  = module.vpc.public_subnets
+  private_subnets = module.vpc.private_subnets
+  cluster_name    = var.cluster_name
+  region          = var.region
 }
 
 module "rds" {
@@ -22,7 +22,7 @@ module "rds" {
   rds_instance_class   = var.rds_instance_class
   private_subnet_ids   = module.vpc.private_subnets
   cidr_private_subnets = var.cidr_private_subnets
-  vpc_id               = module.vpc.vpc_id 
+  vpc_id               = module.vpc.vpc_id
 }
 
 module "redis" {
