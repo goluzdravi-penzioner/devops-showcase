@@ -53,5 +53,3 @@ variable "redis_nodes" {
 variable "redis_engine_version" {
   type = string
 }
-
-###
