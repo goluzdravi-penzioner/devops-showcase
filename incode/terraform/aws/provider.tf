@@ -26,9 +26,9 @@ provider "kubernetes" {
 
 terraform {
   backend "s3" {
-    bucket = "terraform-state-devopsbg"
-    key    = "terraform-state"
-    region = "eu-west-1"
+    bucket         = "terraform-state-devopsbg"
+    key            = "terraform-state"
+    region         = "eu-west-1"
     dynamodb_table = "terrafor-state-lock"
   }
 }

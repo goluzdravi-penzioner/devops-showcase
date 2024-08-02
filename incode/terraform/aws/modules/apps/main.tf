@@ -1,5 +1,4 @@
 resource "helm_release" "nginx" {
-  depends_on = [ kubernetes_secret.db_password ]
 
   name       = "nginx"
   chart      = "nginx"
