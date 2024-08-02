@@ -24,7 +24,9 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_cidr_private_subnets"></a> [cidr\_private\_subnets](#input\_cidr\_private\_subnets) | n/a | `string` | `"10.0.16.0/20"` | no |
+| <a name="input_cidr_block"></a> [cidr\_block](#input\_cidr\_block) | n/a | `any` | n/a | yes |
+| <a name="input_cidr_private_subnets"></a> [cidr\_private\_subnets](#input\_cidr\_private\_subnets) | n/a | `any` | n/a | yes |
+| <a name="input_cidr_public_subnets"></a> [cidr\_public\_subnets](#input\_cidr\_public\_subnets) | n/a | `any` | n/a | yes |
 | <a name="input_cluster_name"></a> [cluster\_name](#input\_cluster\_name) | n/a | `string` | `"devopsbg"` | no |
 | <a name="input_k8s_version"></a> [k8s\_version](#input\_k8s\_version) | n/a | `string` | `"1.30"` | no |
 | <a name="input_rds_db_name"></a> [rds\_db\_name](#input\_rds\_db\_name) | n/a | `string` | n/a | yes |
@@ -37,6 +39,7 @@ No resources.
 | <a name="input_redis_node_type"></a> [redis\_node\_type](#input\_redis\_node\_type) | n/a | `string` | n/a | yes |
 | <a name="input_redis_nodes"></a> [redis\_nodes](#input\_redis\_nodes) | n/a | `number` | n/a | yes |
 | <a name="input_region"></a> [region](#input\_region) | n/a | `string` | `"eu-west-1"` | no |
+| <a name="input_subnet_numbers"></a> [subnet\_numbers](#input\_subnet\_numbers) | n/a | `map(any)` | n/a | yes |
 
 ## Outputs
 
