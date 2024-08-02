@@ -29,7 +29,7 @@ terraform {
     bucket = "terraform-state-devopsbg"
     key    = "terraform-state"
     region = "eu-west-1"
-    #dynamodb_table = "terraform-state-lock-dynamo"
+    dynamodb_table = "terraform-state-lock"
   }
 }
 
