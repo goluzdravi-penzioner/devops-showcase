@@ -13,7 +13,7 @@ resource "aws_db_instance" "database" {
 
 resource "aws_db_subnet_group" "default" {
   name       = "main"
-  subnet_ids = [ module.vpc.private_subnets ]
+  subnet_ids = var.private_subnet_ids
 
   tags = {
     Name = "My DB subnet group"

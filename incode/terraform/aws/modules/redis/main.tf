@@ -13,5 +13,5 @@ resource "aws_elasticache_cluster" "example" {
 
 resource "aws_elasticache_subnet_group" "redis-sg" {
   name       = "eks-subnets"
-  subnet_ids = module.vpc.private_subnets
+  subnet_ids = var.private_subnet_ids
 }

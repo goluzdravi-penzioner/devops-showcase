@@ -1,7 +1,7 @@
 resource "aws_security_group" "allow_rds" {
   name        = "allow_rds"
   description = "Allow rds inbound traffic and all outbound traffic"
-  vpc_id      = module.vpc.id
+  vpc_id      = var.vpc_id
 
   egress {
     from_port        = 0

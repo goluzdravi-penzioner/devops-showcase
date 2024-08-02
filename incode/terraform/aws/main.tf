@@ -25,6 +25,7 @@ module "rds" {
   rds_instance_class   = var.rds_instance_class
   private_subnet_ids   = module.vpc.private_subnets
   cidr_private_subnets = var.cidr_private_subnets
+  vpc_id               = module.vpc.vpc_id 
 }
 
 module "redis" {
@@ -35,5 +36,6 @@ module "redis" {
   redis_engine_version = var.rds_engine_version
   cidr_private_subnets = var.cidr_private_subnets
   private_subnet_ids   = module.vpc.private_subnets
+  vpc_id               = module.vpc.vpc_id
 }
 

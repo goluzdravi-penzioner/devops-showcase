@@ -19,3 +19,7 @@ variable "cidr_private_subnets" {}
 variable "private_subnet_ids" {
   type = list
 }
+
+variable "vpc_id" {
+  type = string
+}
