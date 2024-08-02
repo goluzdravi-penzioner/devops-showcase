@@ -34,16 +34,3 @@ resource "aws_secretsmanager_secret_version" "example" {
   secret_id     = aws_secretsmanager_secret.db_password.id
   secret_string = random_password.db_password.result
 }
-
-# resource "kubernetes_secret" "db_password" {
-#   metadata {
-#     name = "db_password"
-#   }
-
-#   data = {
-#     username = var.rds_db_username
-#     password = random_password.db_password.result
-#   }
-
-#   type = "kubernetes.io/basic-auth"
-# }
