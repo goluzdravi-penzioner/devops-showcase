@@ -44,3 +44,13 @@ jobs:
 
       - name: Log out of Amazon ECR
         run: docker logout ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
+
+      - name: Update image version
+        run: |
+          cd $APP_NAME
+          sed -i -e 's/\(tag:\).*/\1 '${{ github.sha }}'/' dev.yaml
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add .
+          git commit -m "Update tag with version ${{ github.sha }}"
+          git push origin main

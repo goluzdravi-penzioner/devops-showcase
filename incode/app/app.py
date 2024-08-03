@@ -79,7 +79,7 @@ def createplayerFromUrl():
      first_name = allparameters['firstname']
      last_name = allparameters['lastname']
      club = allparameters['club']  
-     #TODO: validate that all arguments have value
+     #TODO: validate input that all arguments have value
 
      mydb = mysql.connector.connect(
      host=str(mysql_hostname),
