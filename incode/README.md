@@ -4,7 +4,6 @@ Incode take home test assigment
 
 ## Table of Contents
 
-- [Requirements](#Rerquirements)
 - [App](#App)
 - [Helm](#Helm)
 - [Terraform](#Terraform)

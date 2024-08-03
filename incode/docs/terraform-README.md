@@ -4,7 +4,7 @@ Incode take home test assigment: Kubernetes resources
 
 ## Table of Contents
 
-- [IRequirements](#Requirements)
+- [Requirements](#Requirements)
 - [Installation](#installation)
 - [Usage](#usage)
 - [CI/CD](#CI/CD)
@@ -51,7 +51,7 @@ To install this project, follow these steps:
 ## Usage
 
 1. navigate to `incode/terraform/aws/`
-2. Initilase terraform amd validate:
+2. Initialise terraform amd validate:
 
    ```
    terraform init
