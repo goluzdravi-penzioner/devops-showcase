@@ -26,4 +26,7 @@ output "k8s_cluster_info" {
   value = module.eks.k8s_cluster
 }
 
-###
+output "helm" {
+  value = module.apps.helm  
+}
+
