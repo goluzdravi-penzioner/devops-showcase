@@ -34,4 +34,4 @@ jobs:
       - name: Deploy Helm chart
         run: |
           cd incode/helm/testapp
-          helm upgrade --install testapp . --atomic
+          helm -n testapp upgrade --install testapp . --atomic --reuse-values
