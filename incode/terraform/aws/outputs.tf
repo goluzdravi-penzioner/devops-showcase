@@ -25,3 +25,5 @@ output "kubeconfig_certificate_authority_data" {
 output "k8s_cluster_info" {
   value = module.eks.k8s_cluster
 }
+
+###
