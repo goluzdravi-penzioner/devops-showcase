@@ -36,6 +36,7 @@ def dbseed():
      return "database created"
 
 dbseed()
+# TODO: use env var for databse name in dbseed
 
 app = Flask(__name__)
 
