@@ -6,7 +6,7 @@ on:
       - main
     paths:
       - 'incode/app/**'
-      - '.github/workflows/build-and-push-image.yml'    
+      - '.github/workflows/build-and-push-image.yaml'    
 
 jobs:
   build-and-push:
