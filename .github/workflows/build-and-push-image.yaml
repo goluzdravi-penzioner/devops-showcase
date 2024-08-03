@@ -45,7 +45,7 @@ jobs:
 
       - name: Log out of Amazon ECR
         run: docker logout ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
-
+      
       - name: Update image version
         run: |
           cd incode/helm/testapp
