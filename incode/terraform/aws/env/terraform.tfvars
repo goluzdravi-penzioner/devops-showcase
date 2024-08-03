@@ -2,14 +2,13 @@
 redis_cluster_name   = "testapp"
 redis_node_type      = "cache.t4g.micro"
 redis_nodes          = 1
-redis_engine_version = "3.2.10"
 
 ### RDS ###
 rds_storage        = 10
-rds_db_name        = "mydb"
+rds_db_name        = "mydatabase"
 rds_engine_version = "8.0"
 rds_instance_class = "db.t3.micro"
-rds_db_username    = "foo"
+rds_db_username    = "testappuser"
 
 ### VPC ###
 subnet_numbers = {

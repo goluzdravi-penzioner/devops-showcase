@@ -1,4 +1,5 @@
 resource "aws_db_instance" "database" {
+  identifier           = "testapp-db"
   allocated_storage    = var.rds_storage
   db_name              = var.rds_db_name
   engine               = "mysql"
@@ -10,6 +11,10 @@ resource "aws_db_instance" "database" {
   skip_final_snapshot  = true
   vpc_security_group_ids = [ aws_security_group.allow_rds.id ]
   db_subnet_group_name = aws_db_subnet_group.db.name
+
+  tags = {
+    Name = "testapp-db"
+  }
 }
 
 resource "aws_db_subnet_group" "db" {

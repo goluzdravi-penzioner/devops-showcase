@@ -1,9 +1,15 @@
-resource "helm_release" "nginx" {
+resource "helm_release" "testapp" {
 
   name       = "testapp"
-  chart      = "../../../../helm/testapp"
+  chart      = "../../helm/testapp"
   namespace  = "testapp"
   create_namespace = true
+
+  lifecycle {
+    ignore_changes = [
+      "chart"
+    ]
+  }
 
   set {
     name  = "db_password"
@@ -29,5 +35,4 @@ resource "helm_release" "nginx" {
     name  = "redis_host"
     value = var.redis_host
   }
-
 }
