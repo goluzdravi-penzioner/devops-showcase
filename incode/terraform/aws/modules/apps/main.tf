@@ -5,11 +5,11 @@ resource "helm_release" "testapp" {
   namespace  = "testapp"
   create_namespace = true
 
-  lifecycle {
-    ignore_changes = [
-      "chart"
-    ]
-  }
+  # lifecycle {
+  #   ignore_changes = [
+  #     "chart"
+  #   ]
+  # }
 
   set {
     name  = "db_password"
