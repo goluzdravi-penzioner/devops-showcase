@@ -30,7 +30,6 @@ module "redis" {
   redis_cluster_name   = var.redis_cluster_name
   redis_node_type      = var.redis_node_type
   redis_nodes          = var.redis_nodes
-  redis_engine_version = var.rds_engine_version
   cidr_private_subnets = var.cidr_private_subnets
   private_subnet_ids   = module.vpc.private_subnets
   vpc_id               = module.vpc.vpc_id

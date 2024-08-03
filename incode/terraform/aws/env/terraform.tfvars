@@ -1,6 +1,6 @@
 ### redis ###
 redis_cluster_name   = "testapp"
-redis_node_type      = "t4g.micro"
+redis_node_type      = "cache.t4g.micro"
 redis_nodes          = 1
 redis_engine_version = "3.2.10"
 

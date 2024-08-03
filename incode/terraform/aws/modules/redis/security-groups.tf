@@ -1,6 +1,6 @@
 resource "aws_security_group" "allow_redis" {
-  name        = "allow_rds"
-  description = "Allow rds inbound traffic and all outbound traffic"
+  name        = "allow_reds"
+  description = "Allow redis inbound traffic and all outbound traffic"
   vpc_id      = var.vpc_id
 
   egress {

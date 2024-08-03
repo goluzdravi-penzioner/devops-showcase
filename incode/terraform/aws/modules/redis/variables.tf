@@ -10,9 +10,9 @@ variable "redis_nodes" {
   type = number
 }
 
-variable "redis_engine_version" {
-  type = string
-}
+# variable "redis_engine_version" {
+#   type = string
+# }
 
 variable "cidr_private_subnets" {}
 
