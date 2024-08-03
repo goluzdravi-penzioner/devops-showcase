@@ -1,3 +1,3 @@
 output "helm" {
-  value = helm_release.testapp
+  value = helm_release.testapp.chart
 }

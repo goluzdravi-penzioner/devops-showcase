@@ -27,6 +27,7 @@ output "k8s_cluster_info" {
 }
 
 output "helm" {
-  value = module.apps.helm  
+  value = module.apps.helm
+  sensitive = false
 }
 
