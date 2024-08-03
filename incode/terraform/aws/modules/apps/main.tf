@@ -6,12 +6,6 @@ resource "helm_release" "testapp" {
   create_namespace = true
   reuse_values = true
 
-  # lifecycle {
-  #   ignore_changes = [
-  #     "chart"
-  #   ]
-  # }
-
   set {
     name  = "db_password"
     value = var.db_password
