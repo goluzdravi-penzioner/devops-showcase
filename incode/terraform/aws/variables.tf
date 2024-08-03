@@ -54,4 +54,3 @@ variable "redis_engine_version" {
   type = string
 }
 
-###
