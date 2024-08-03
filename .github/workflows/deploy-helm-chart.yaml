@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - 'incode/helm/testapp/**'
-      - '.github/workflows/deploy-helm-chart.yml'
+      - '.github/workflows/deploy-helm-chart.yaml'
 
 jobs:
   deploy:
