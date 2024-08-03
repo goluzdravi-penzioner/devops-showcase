@@ -48,14 +48,17 @@ jobs:
       - name: Log out of Amazon ECR
         run: docker logout ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com
       
-      - name: Update image version
+      - name: Setup kubectl
+        uses: azure/setup-kubectl@v3
+
+      - name: Install Helm
+        uses: azure/setup-helm@v3
+
+      - name: Update kubeconfig
+        run: |
+          aws eks update-kubeconfig --region ${{ secrets.AWS_REGION }} --name devopsbg
+
+      - name: Deploy Helm chart
         run: |
           cd incode/helm/testapp
-          sed -i -e 's/\(tag:\).*/\1 '${{ github.sha }}'/' values.yaml
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add .
-          git commit -m "Update tag with version ${{ github.sha }}"
-          git push origin main
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT_TOKEN }}   
+          helm -n testapp upgrade --install testapp . --set image.tag={{ github.sha }} --atomic --reuse-values 
