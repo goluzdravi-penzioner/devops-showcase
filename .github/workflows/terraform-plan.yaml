@@ -7,7 +7,7 @@ on:
       - 'incode/terraform/aws/**'   
 
 jobs:
-  terraform-init-plan-apply:
+  terraform-plan:
     runs-on: ubuntu-latest
 
     steps:
