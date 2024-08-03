@@ -11,6 +11,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
+| <a name="module_apps"></a> [apps](#module\_apps) | ./modules/apps | n/a |
 | <a name="module_eks"></a> [eks](#module\_eks) | ./modules/eks | n/a |
 | <a name="module_rds"></a> [rds](#module\_rds) | ./modules/rds | n/a |
 | <a name="module_redis"></a> [redis](#module\_redis) | ./modules/redis | n/a |
