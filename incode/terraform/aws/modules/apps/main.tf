@@ -16,6 +16,16 @@ resource "helm_release" "nginx" {
   }
 
   set {
+    name  = "db_name"
+    value = var.db_name
+  }
+
+  set {
+    name  = "db_username"
+    value = var.db_username
+  }
+
+  set {
     name  = "redis_host"
     value = var.redis_host
   }

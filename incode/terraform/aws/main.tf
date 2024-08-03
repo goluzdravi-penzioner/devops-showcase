@@ -35,12 +35,12 @@ module "redis" {
   vpc_id               = module.vpc.vpc_id
 }
 
-# module "apps" {
-#   depends_on  = [module.rds, module.redis]
-#   source      = "./modules/apps"
-#   db_password = module.rds.db_password
-#   db_username = var.rds_db_username
-#   db_name     = var.rds_db_name
-#   db_host     = module.rds.db_host
-#   redis_host  = module.redis.redis_host
-# }
+module "apps" {
+  depends_on  = [module.rds, module.redis]
+  source      = "./modules/apps"
+  db_password = module.rds.db_password
+  db_username = var.rds_db_username
+  db_name     = var.rds_db_name
+  db_host     = module.rds.db_host
+  redis_host  = module.redis.redis_host
+}
