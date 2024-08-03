@@ -1,8 +1,7 @@
 resource "helm_release" "nginx" {
 
-  name       = "nginx"
-  chart      = "nginx"
-  repository = "https://helm.nginx.com/stable"
+  name       = "testapp"
+  chart      = "../../../../helm/testapp"
   namespace  = "testapp"
   create_namespace = true
 
