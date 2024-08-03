@@ -4,6 +4,7 @@ resource "helm_release" "testapp" {
   chart      = "../../helm/testapp"
   namespace  = "testapp"
   create_namespace = true
+  reuse_values = true
 
   # lifecycle {
   #   ignore_changes = [
