@@ -1,6 +1,6 @@
 # Incode test
 
-Incode take home test assigment: Kubernetes resources
+Incode take home test assigment: Webapp with sql (mysql) database and redis
 
 ## Table of Contents
 

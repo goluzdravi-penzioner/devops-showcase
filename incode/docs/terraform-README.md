@@ -1,13 +1,14 @@
 # Incode test
 
-Incode take home test assigment: Kubernetes resources
+Incode take home test assigment: Terraform resources
 
 ## Table of Contents
 
 - [Requirements](#Requirements)
-- [Installation](#installation)
-- [Usage](#usage)
-- [CI/CD](#CI/CD)
+- [Resources](#Resources)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [CICD](#CICD)
 
 ## Requirements
 
@@ -47,6 +48,11 @@ To install this project, follow these steps:
       export AWS_DEFAULT_REGION=us-west-2
       export AWS_DEFAULT_OUTPUT=json
       ```
+## Resources
+
+Details on terraform resources used 
+[Resources](../terraform/aws/README.md)
+
 
 ## Usage
 
@@ -62,7 +68,7 @@ To install this project, follow these steps:
    terraform plan --var-file env/terraform.tfvars
    terraform apply --var-file env/terraform.tfvars
    ```
-## CI/CD
+## CICD
 
 - CI/CD is implemented with github actions (GHA)
 - Make changes in the code, commit and push to the remote (main branch)
