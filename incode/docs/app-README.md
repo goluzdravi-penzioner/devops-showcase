@@ -39,9 +39,18 @@ To install this project, follow these steps:
 1. App is availalbe on `http://localhost:5000`
 2. Mysql on `localhost:3307` (port is changed in case there is mysql already running locally)
 3. In the browser navigate to http://localhost:5000
+
+   ![Local Image](./images/homepage.png)
+
 4. To test redis usage navigate to http://localhost:5000/login
+
+   ![Local Image](./images/login.png)
+   
    
    After loging in it sould show a successfull login message
+
+   ![Local Image](./images/loggedin.png)
+
 5. To test interaction with mysql:
 
     ```
@@ -51,6 +60,9 @@ To install this project, follow these steps:
 
     
     Result should be a new row in players table in mysql database
+
+    ![Local Image](./images/mysql.png)
+
 
 ## CI/CD
 
