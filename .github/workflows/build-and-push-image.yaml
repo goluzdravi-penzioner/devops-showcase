@@ -61,6 +61,5 @@ jobs:
       - name: Deploy Helm chart
         run: |
           cd incode/helm/testapp
-          pwd
-          ls -lh
+          helm lint .
           helm -n testapp upgrade --install testapp . --set image.tag=${{ github.sha }} --atomic --reuse-values 
