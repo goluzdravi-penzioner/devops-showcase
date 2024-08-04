@@ -4,7 +4,7 @@ Incode take home test assigment: Webapp with sql (mysql) database and redis
 
 ## Table of Contents
 
-- [IRequirements](#Requirements)
+- [Requirements](#Requirements)
 - [Installation](#installation)
 - [Usage](#usage)
 - [CI/CD](#CI/CD)
